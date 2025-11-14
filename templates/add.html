@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-md-6 mx-auto">
+    <div class="card shadow">
+        <div class="card-body">
+            <h3>Add New Note</h3>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input class="form-control" type="text" name="title">
+                </div>
+
+                <div class="mb-3">
+                    <label>Content</label>
+                    <textarea class="form-control" rows="5" name="content"></textarea>
+                </div>
+
+                <button class="btn btn-success w-100">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

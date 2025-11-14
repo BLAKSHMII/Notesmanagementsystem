@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-md-6 mx-auto">
+    <div class="card shadow">
+        <div class="card-body">
+            <h3>Edit Note</h3>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input class="form-control" type="text" name="title" value="{{ note.title }}">
+                </div>
+
+                <div class="mb-3">
+                    <label>Content</label>
+                    <textarea class="form-control" name="content" rows="5">{{ note.content }}</textarea>
+                </div>
+
+                <button class="btn btn-primary w-100">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

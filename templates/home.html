@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+    <h2>Your Notes</h2>
+    <a href="/add" class="btn btn-primary">+ Add Note</a>
+</div>
+
+<div class="row">
+    {% for note in notes %}
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h5>{{ note.title }}</h5>
+                <p>{{ note.content }}</p>
+                <a href="/edit/{{ note.id }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/delete/{{ note.id }}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if notes|length == 0 %}
+<div class="alert alert-info text-center">No notes found. Add a new note!</div>
+{% endif %}
+
+{% endblock %}
