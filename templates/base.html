@@ -12,25 +12,39 @@
 <body class="d-flex flex-column min-vh-100">
 
     <!-- Header -->
-    <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4">
-    <a class="navbar-brand fw-bold" href="/" style="font-size: 1.4rem;">
-        📝 Notes Management App
-    </a>
-    <div class="ms-auto text-white d-flex align-items-center">
-        {% if session.get('username') %}
-            <span class="me-3">
-                Welcome, <b>{{ session.username }}</b> 👋
-            </span>
-            <a href="/logout" class="btn btn-light btn-sm">Logout</a>
-        {% else %}
-            <a href="/login" class="btn btn-light btn-sm me-2">Login</a>
-            <a href="/register" class="btn btn-outline-light btn-sm">Register</a>
-        {% endif %}
-    </div>
-    </nav>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
 
-    </header>
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="/">
+            📝 Notes Management App
+        </a>
+
+        <!-- Toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="ms-auto d-flex align-items-center text-white">
+
+                {% if session.get('username') %}
+                    <span class="me-3">
+                        Welcome, <b>{{ session.username }}</b> 👋
+                    </span>
+                    <a href="/logout" class="btn btn-light btn-sm">Logout</a>
+                {% else %}
+                    <a href="/login" class="btn btn-light btn-sm me-2">Login</a>
+                    <a href="/register" class="btn btn-outline-light btn-sm">Register</a>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</nav>
 
     <!-- Main -->
     <main class="container my-4 flex-grow-1">
